@@ -15,15 +15,10 @@ board.addEventListener("mousedown", function(e) {
   };
 
   undoStack.push(point);
-
-  socket.emit("mousedown", point);
-  // event emit
 });
-// mmousedown x,y beginPath,moveTo(x,y),color,size
-// mouseMove=> x1,y1, lineTo,stroke
+
 board.addEventListener("mousemove", function(e) {
   if (isMouseDown == true) {
-    // console.log(ctx);
     let top = getLocation();
 
     ctx.lineTo(e.clientX, e.clientY - top);
@@ -36,7 +31,6 @@ board.addEventListener("mousemove", function(e) {
       width: ctx.lineWidth
     };
     undoStack.push(point);
-    socket.emit("mousemove", point);
   }
 });
 
@@ -51,18 +45,20 @@ let interval = null;
 
 undo.addEventListener("mousedown", function() {
   interval = setInterval(function() {
-    if (undoMaker()) socket.emit("undo");
+    undoMaker();
   }, 50);
 });
 
 undo.addEventListener("mouseup", function() {
   clearInterval(interval);
 });
+
 redo.addEventListener("mousedown", function() {
   interval = setInterval(function() {
-    if (redoMaker()) socket.emit("redo");
+    redoMaker();
   }, 50);
 });
+
 redo.addEventListener("mouseup", function() {
   clearInterval(interval);
 });

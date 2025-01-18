@@ -1,5 +1,3 @@
-// connect to socket server
-const socket = io.connect("http://localhost:3000");
 // *********************************Basic Setup
 const board = document.querySelector(".board");
 board.height = window.innerHeight;
@@ -17,26 +15,19 @@ ctx.lineWidth = 3;
 // ************************Change Size**************************//
 function sizeChange(value) {
   ctx.lineWidth = value;
-  socket.emit("size", value);
 }
 
 // **tool Change***************************************************//
 function handleLocaltoolChange(tool) {
   handleToolChange(tool);
-  if (tool != "sticky");
-  socket.emit("toolchange", tool);
 }
 // ******************handle color****************************
 function handleColorChange(color) {
   ctx.strokeStyle = color;
-  socket.emit("color", color);
 }
 
 const hamburger = document.querySelector(".hamburger");
 const toolPanel = document.querySelector(".tool-panel");
 hamburger.addEventListener("click", function () {
-  handleHamburger()
-
-  socket.emit("hamburger");
+  handleHamburger();
 });
-
