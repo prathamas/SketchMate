@@ -1,5 +1,5 @@
 // connect to socket server
-const socket = io.connect("https://pepboard-1.onrender.com");
+const socket = io.connect("http://localhost:3000");
 // *********************************Basic Setup
 const board = document.querySelector(".board");
 board.height = window.innerHeight;
@@ -34,8 +34,8 @@ function handleColorChange(color) {
 
 const hamburger = document.querySelector(".hamburger");
 const toolPanel = document.querySelector(".tool-panel");
-hamburger.addEventListener("click", function () {
-  handleHamburger()
+hamburger.addEventListener("click", function() {
+   handleHamburger() 
 
   socket.emit("hamburger");
 });

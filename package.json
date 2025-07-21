@@ -1,24 +1,16 @@
 {
-  "name": "pepBoard",
+  "name": "mywhiteboardapp",
   "version": "1.0.0",
   "description": "",
   "main": "express.js",
-  "dependencies": {
-    "express": "^4.21.2",
-    "socket.io": "^2.3.0"
-  },
   "scripts": {
-    "start": "node express"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Pep-DEV101/PepBoard.git"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Pep-DEV101/PepBoard/issues"
-  },
-  "homepage": "https://github.com/Pep-DEV101/PepBoard#readme"
+  "dependencies": {
+    "express": "^5.1.0",
+    "socket.io": "^2.3.0"
+  }
 }

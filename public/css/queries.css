@@ -29,11 +29,11 @@
     transform: scale(0.6);
     position: absolute;
     left: 1vw;
-   top:20vh;
+    top: -2vh;
   }
   .toolBar{
-    display: flex;
-    flex-direction: column;
+    /* display: flex; */
+    /* flex-direction: column; */
     transform: scale(1) ;
   }
 
